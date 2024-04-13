@@ -20,49 +20,6 @@ function updateListAndTotal() {
     displayItems(items);
 
     updateTotal();
-}
-
-// Az oldal betöltésekor ellenőrizzük, hogy van-e mentett adat a sessionStorage-ben
-window.addEventListener('DOMContentLoaded', function() {
-    const savedItemList = sessionStorage.getItem('itemList');
-    if (savedItemList) {
-        itemList = JSON.parse(savedItemList);
-        updateListAndTotal(); // Lista és végösszeg frissítése a mentett adatok alapján
-    }
-});
-
-
-
-// Tétel hozzáadása a listához vagy darabszám növelése
-function addItemToList(name, price) {
-    let existingItem = itemList.find(item => item.name === name);
-
-    if (existingItem) {
-        existingItem.piece++;
-    } else {
-        itemList.push({ name, price, piece: 1 });
-    }
-
-    updateListAndTotal();
-    saveItemListToSessionStorage(); // Mentjük az itemList-et a sessionStorage-be
-}
-
-// Lista és végösszeg frissítése
-function updateListAndTotal() {
-    summaryBody.innerHTML = ""; // Lista tartalmának törlése
-    itemList.forEach((item, index) => { // Az indexet is átadjuk
-        var row =`
-            <tr>
-                <td>${item.name}</td>
-                <td>${item.piece}</td>
-                <td>${item.price}</td>
-                <td><img src="img/trash.svg" class="trashbin" data-index="${index}"></td> <!-- Az indexet adatattribútumként tároljuk -->
-            </tr>
-        `;
-        summaryBody.innerHTML += row;
-    });
-
-    updateTotal();
 
     // Trashbin (kukás) ikonokhoz eseményfigyelők hozzáadása
     const trashbins = document.querySelectorAll('.trashbin');
@@ -72,6 +29,9 @@ function updateListAndTotal() {
             deleteItem(index);
         });
     });
+
+    // CSS fájl betöltése
+    loadCSS('style.css');
 }
 
 // Tétel törlése az index alapján
@@ -156,7 +116,7 @@ function displayItems(itemsToDisplay) {
       const card = document.createElement('div');
       card.className = 'card-item';
   card.innerHTML = `
-  <div class="card" id="itemButton">
+  <div id="itemButton" class="${item.category}">
   <div class="card-body">
     <h5 class="card-title" id="itemName">${item.name}</h5>
     <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>
@@ -174,5 +134,33 @@ function displayItems(itemsToDisplay) {
 
 }
 
+// CSS fájl dinamikus betöltése
+function loadCSS(href) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+}
 
+// 5. Az oldal betöltésekor ellenőrizzük, hogy van-e mentett adat a sessionStorage-ben
+window.addEventListener('DOMContentLoaded', function() {
+    const savedItemList = sessionStorage.getItem('itemList');
+    if (savedItemList) {
+        itemList = JSON.parse(savedItemList);
+        updateListAndTotal(); // Lista és végösszeg frissítése a mentett adatok alapján
+    }
+});
 
+// 6. Tétel hozzáadása a listához vagy darabszám növelése
+function addItemToList(name, price) {
+    let existingItem = itemList.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.piece++;
+    } else {
+        itemList.push({ name, price, piece: 1 });
+    }
+
+    updateListAndTotal();
+    saveItemListToSessionStorage(); // Mentjük az itemList-et a sessionStorage-be
+}

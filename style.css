@@ -5,6 +5,8 @@ body {
     background-color: #f8f9fa;
 }
 
+
+
 .container {
     width: 100%;
     max-width: 1200px; /* Korlátozzuk a konténer maximális szélességét */
@@ -68,6 +70,110 @@ header {
     min-height: 100px;
     max-height: 100px;
 }
+
+.Beer {
+    background-color: lightgreen;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Energydrink {
+    background-color: blue;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Water {
+    background-color: aqua;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Shot {
+    
+        background-color:blueviolet;
+        color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flexbox;
+        min-width: 11rem;
+        max-width: 11rem;
+        min-height: 100px;
+        max-height: 100px;
+    
+}
+
+.Spritz {
+    background-color: rosybrown;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Champagne {
+    background-color: gold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Longdrink {
+    background-color:limegreen;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Cocktail {
+    background-color: orange;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Soda {
+    background-color: red;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
 
 .card-title {
     font-size: 1em;
