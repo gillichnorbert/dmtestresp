@@ -30,27 +30,10 @@
 
 <div class="container mt-4">
   <div class="row">
-    <div class="categoryButton">
-      <div id="categoryFilter" class="categoryFilter">
-        <!-- KATEGÓRIA GOMBOK-->
-        <button class="btn btn-primary mx-2" id="backButton">Minden Termék</button>
-        
-      </div>
-      <div>
-        <div id="itemPlace" class="flex-container">
 
-          <!--KÁRTYÁK-->
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="fixed-summary">
+        <button class="btn btn-primary mx-2 mb-4" id="backButton" onclick="backToDrinks()">Vissza</button>
+<div class="summary">
   <button id="clearListBtn" class="btn btn-danger">Lista törlése</button>
-  
-
   <div class="totalItems">
     <table class="table table-striped">
       <thead>
@@ -58,7 +41,6 @@
           <th>Tétel neve</th>
           <th>Db</th>
           <th>Ár</th>
-
           <th></th>
         </tr>
       </thead>
@@ -67,12 +49,15 @@
   </div>
   <div id="totalAmount">
     <div class="total">
-      <p class="totalText">Végösszeg: <span id="total"> Ft</span></p>
+      <p class="totalText">Végösszeg: <span id="total" class="cashOut"> Ft</span></p>
     </div>
   </div>
 </div>
 
 
+<script>
+
+    </script>
 <script src="items.js"></script>
 <script src="app.js"></script>
 </body>

@@ -240,3 +240,10 @@ header {
     right: 10px; /* A jobb távolság az összegző doboz jobb szélétől */
 }
 
+
+
+.cashOut {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
