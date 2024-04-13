@@ -1,7 +1,0 @@
-{
-    "server": [
-        "src"
-    ],
-    "port":3000,
-    "watch": true
-}
