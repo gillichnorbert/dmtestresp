@@ -26,6 +26,7 @@ backButton.addEventListener('click', function() {
 
 
 
+
 // Lista és végösszeg frissítése
 function updateListAndTotal() {
     // Tartalom frissítése az összes termék megjelenítéséhez
@@ -185,16 +186,10 @@ categories.forEach(category => {
               addItemToList(item.name, item.price);
           });
       });
-  
-  }
-  
-  // CSS fájl dinamikus betöltése
-  function loadCSS(href) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      document.head.appendChild(link);
-  }
+
+    // Új CSS fájl dinamikus betöltése
+
+}
   
   // 5. Az oldal betöltésekor ellenőrizzük, hogy van-e mentett adat a sessionStorage-ben
   window.addEventListener('DOMContentLoaded', function() {

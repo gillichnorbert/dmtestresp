@@ -270,17 +270,17 @@ cardContainer.className = 'row';
 itemPlace.appendChild(cardContainer);
 
 const cardElements = items.map(item => {
-    const card = document.createElement('div');
-    card.className = 'card-item';
-    card.innerHTML = `
-    <div class="card" id="itemButton">
-    <div class="card-body">
-    <h5 class="card-title" id="itemName">${item.name}</h5>
-    <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>
-    <p class="card-text" id="itemPrice">${item.price} Ft</p>
-    </div>
-    </div>
-    `;
+  const card = document.createElement('div');
+  card.className = 'card-item';
+card.innerHTML = `
+<div id="itemButton" class="${item.category}">
+<div class="card-body">
+<h5 class="card-title" id="itemName">${item.name}</h5>
+<h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>
+<p class="card-text" id="itemPrice">${item.price} Ft</p>
+</div>
+</div>
+`;
     card.addEventListener('click', function() {
         addItemToList(item.name, item.price);
     });
