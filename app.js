@@ -9,15 +9,19 @@ const backButton = document.getElementById('backButton');
 
 function openCashoutPage() {
     window.open('cashout.html', "_self");
-    updateListAndTotal();
+    updateListAndTotal(); // Lista és végösszeg frissítése
 }
+
 function backToDrinks() {
+    updateListAndTotal(); // Lista és végösszeg frissítése
+    saveItemListToSessionStorage(); // Mentjük az üres itemList-et a sessionStorage-be
     window.open('index.html', "_self");
 }
 
 // Vissza gomb eseménykezelője
 backButton.addEventListener('click', function() {
     displayItems(items); // Minden termék megjelenítése
+    
 });
 
 
@@ -87,6 +91,7 @@ function updateListAndTotal() {
 function deleteItem(index) {
     itemList.splice(index, 1); // Az adott indexű elem törlése a listából
     updateListAndTotal(); // Lista és végösszeg frissítése
+    saveItemListToSessionStorage(); // Mentjük az üres itemList-et a sessionStorage-be
 }
 
 
@@ -98,6 +103,8 @@ function updateTotal() {
     });
     total.innerText = ` ${sum} Ft`;
 }
+
+
 
 // Lista törlése gomb eseménykezelője
 clearListBtn.addEventListener('click', function() {

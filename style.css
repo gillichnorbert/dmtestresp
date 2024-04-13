@@ -199,12 +199,16 @@ header {
     right: 0;
     width: 25%;
     max-width: 300px; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
+    max-height: 80%;
     background-color: #fff; /* Háttérszín */
     border: 1px solid #ccc; /* Keret */
     border-radius: 5px; /* Kerekített sarkok */
     padding: 10px;
     box-sizing: border-box; /* A padding ne növelje a szélességet */
     z-index: 999; /* Biztosítja, hogy a fixált elem a lap többi tartalma fölé kerüljön */
+    overflow-y: scroll;
+    margin-bottom: 30px;
+
 }
 
 .totalItems {
@@ -224,7 +228,9 @@ header {
 .totalText {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    position:absolute;
+
 }
 
 .trashbin {
@@ -232,18 +238,28 @@ header {
 }
 
 #total {
-    font-size: 1.1rem;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    position: absolute; /* Abszolút pozícionálás */
+    text-align: center;
     bottom: 10px; /* A felső távolság az összegző doboz tetejétől */
     right: 10px; /* A jobb távolság az összegző doboz jobb szélétől */
+
 }
 
 
-
-.cashOut {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+#totalAmount {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    max-width: 300px; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
+    height: 40px;
+    max-height: 80%;
+    background-color: #fff; /* Háttérszín */
+    border: 1px solid #ccc; /* Keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    padding-left: 5px;
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+    z-index: 999;
 }

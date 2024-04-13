@@ -49,7 +49,7 @@
 </div>
 <div class="fixed-summary">
   <button id="clearListBtn" class="btn btn-danger">Lista törlése</button>
-  
+  <button id="openListBtn" class="btn btn-warning" onclick="openCashoutPage()">Lista megtekintése</button>
 
   <div class="totalItems">
     <table class="table table-striped">
@@ -65,13 +65,13 @@
       <tbody id="summeryBody"></tbody>
     </table>
   </div>
-  <div id="totalAmount">
-    <div class="total">
-      <p class="totalText">Végösszeg: <span id="total"> Ft</span></p>
-    </div>
+
   </div>
 </div>
-
+<div id="totalAmount">
+  <div class="total">
+    <p class="totalText">Összesen: <span id="total" style="font-size: larger;"> Ft</span></p>
+  </div>
 
 <script src="items.js"></script>
 <script src="app.js"></script>
